@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('icinga2-config', {
+        category: 'config',
+        defaults: {
+            name: {value: "", required: true},
+            api_user: {value: "", required: true},
+            api_pass: {value: "", required: true},
+        },
+        label: function () {
+            return this.name||"N/A";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="icinga2-config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-globe"></i> Name for credentials</label>
+        <input type="text" id="node-config-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-api_user"><i class="fa fa-globe"></i> API Username</label>
+        <input type="text" id="node-config-input-api_user">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-api_pass"><i class="fa fa-globe"></i> API Password</label>
+        <input type="text" id="node-config-input-api_pass">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="icinga2-config">
+    <p>A node that stores Icinga2 API credentials to be shared between nodes.</p>
+</script>

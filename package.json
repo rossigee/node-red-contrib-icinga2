@@ -1,0 +1,16 @@
+{
+    "name"         : "node-red-contrib-icinga2",
+    "version"      : "0.0.3",
+    "description"  : "Nodes for sending Icinga2 API requests. Wraps 'icinga2' module.",
+    "author"       : "Ross Golder <ross@golder.org>",
+    "dependencies": {
+      "icinga2-api": "git+https://github.com/rossigee/nodejs-icinga2api"
+    },
+    "keywords": [ "node-red" ],
+    "node-red": {
+        "nodes": {
+            "icinga2": "icinga2.js",
+            "icinga2-config": "icinga2-config.js"
+        }
+    }
+}

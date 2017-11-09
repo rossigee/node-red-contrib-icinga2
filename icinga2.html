@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    RED.nodes.registerType('icinga2',{
+        category: 'dns',
+        color: '#a6bbcf',
+        defaults: {
+          name: {value:""},
+          creds: {value:"", type:"icinga2-config"},
+          method: {value:"", required: "true"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"icinga2";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="icinga2">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-globe"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-credentials"><i class="fa fa-globe"></i> Credentials</label>
+        <input type="text" id="node-input-creds" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-method"><i class="fa fa-unlock"></i> Method</label>
+        <select id="node-input-method">
+          <option value="getStatus">getStatus</option>
+          <option value="getHosts">getHosts</option>
+          <option value="getServices">getServices</option>
+        </select>
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="icinga2">
+    <p>A node that sends Icinga2 API requests.</p>
+</script>
